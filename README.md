@@ -15,7 +15,7 @@ $ polymer serve
 ## Building Your Application
 
 ```
-$ polymer build
+$ polymer build roan is een piemel
 ```
 
 This will create builds of your application in the `build/` directory, optimized to be served in production. You can then serve the built versions by giving `polymer serve` a folder to serve from:
