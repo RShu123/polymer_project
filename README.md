@@ -9,13 +9,13 @@ First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polyme
 ## Viewing Your Application
 
 ```
-$ polymer serve penis
+$ polymer 
 ```
 
 ## Building Your Application
 
 ```
-$ polymer build roan is een piemel
+$ polymer build
 ```
 
 This will create builds of your application in the `build/` directory, optimized to be served in production. You can then serve the built versions by giving `polymer serve` a folder to serve from:
