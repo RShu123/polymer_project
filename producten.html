@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html>
+
+<head>
+<!--<script src="allscript.js"></script>-->
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<!--<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">-->
+</head>
+
+<body onload="startTime()">
+
+<div class="sidenav">
+  <a class="active">Menu</a>
+  <a>Overzicht</a>
+  <a>Rekening</a>
+</div>
+
+<div id="header2">
+<br>
+<br>
+<p class="restaurant"> Restaurant </p>
+<p class="datum" id="datum"></p>
+<div id="klik">
+<button class="knop2" type="button" onclick="window.location.href='rekening.html'">Rekening vragen</button>
+<button class="knop" type="button" disabled onclick="window.location.href='overzicht.html'">Bestelling verzenden</button>
+</div>
+</div>
+
+<div id="producten">
+
+<div class="productlijst">
+
+<div id="productbox">
+  <img class="product1" src="producten/salade.jpg" alt="Norway">
+  <div class="container">
+    <p>Frisse salade</p>
+	<button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+<div class="productlijst">
+
+<div id="productbox">
+  <img class="product1" src="producten/salade.jpg" alt="Norway">
+  <div class="container">
+    <p>Frisse salade</p>
+	<button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+<div class="productlijst">
+
+<div id="productbox">
+  <img class="product1" src="producten/salade.jpg" alt="Norway">
+  <div class="container">
+    <p>Frisse salade</p>
+	<button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+<div class="productlijst2">
+
+<div id="productbox">
+  <img class="product1" src="producten/biefstuk.jpg" alt="Norway">
+  <div id="container2">
+    <p>Goede stevige, maar malse biefstuk</p>
+	<button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+<div class="productlijst2">
+
+<div id="productbox">
+  <img class="product1" src="producten/biefstuk.jpg" alt="Norway">
+  <div id="container2">
+    <p>Goede stevige, maar malse biefstuk</p>
+	<button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+<div class="productlijst2">
+
+<div id="productbox">
+  <img class="product1" src="producten/biefstuk.jpg" alt="Norway">
+  <div id="container2">
+    <p>Goede stevige, maar malse biefstuk</p>
+	<button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+</div>
+
+</body>
+
+<script>
+function startTime() {
+    var today = new Date();
+	var y = today.getFullYear();
+	var m = today.getMonth() + 1;
+	var d = today.getDate();
+    var h = today.getHours();
+    var min = today.getMinutes();
+    m = checkTime(m);
+    document.getElementById('datum').innerHTML = d + "/" + m + "/" + y + " | " + h + ":" + min ;
+    var t = setTimeout(startTime, 500);
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
