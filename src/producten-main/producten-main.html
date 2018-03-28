@@ -1,0 +1,141 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="producten-main">
+  <template>
+    <style>
+
+    #producten{
+    	background: rgba(255,153,0,0.1);
+    	border-style:solid;
+    	height: 200%;
+    	width: 88.1%;
+    	position: absolute;
+    	margin-left: 156px;
+    	margin-top: 9.5%;
+    	z-index: -1;
+    }
+
+    #productbox {
+    	margin-top: 5%;
+    	margin-left: 14.68%;
+    	width: 200px;
+    	background-color: white;
+    	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    div.productlijst{
+    	padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+
+    div.productlijst2{
+    	margin-top: 3%;
+    	padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+
+    div.container {
+    	text-align: center;
+    	height: 20px;
+    	margin-top: 10px;
+    }
+
+    #container2 {
+    	text-align: center;
+    	height: 40px;
+    	margin-top: 10px;
+    }
+
+    img.product1{
+    	height: 200px;
+    	width: 200px;
+    	z-index: -1;
+    }
+
+
+</style>
+
+<div id="producten">
+
+<div class="productlijst">
+
+<div id="productbox">
+  <img class="product1" src="producten/salade.jpg" alt="Norway">
+  <div class="container">
+    <p>Frisse salade</p>
+  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+<div class="productlijst">
+
+<div id="productbox">
+  <img class="product1" src="producten/salade.jpg" alt="Norway">
+  <div class="container">
+    <p>Frisse salade</p>
+  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+<div class="productlijst">
+
+<div id="productbox">
+  <img class="product1" src="producten/salade.jpg" alt="Norway">
+  <div class="container">
+    <p>Frisse salade</p>
+  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+<div class="productlijst2">
+
+<div id="productbox">
+  <img class="product1" src="producten/biefstuk.jpg" alt="Norway">
+  <div id="container2">
+    <p>Goede stevige, maar malse biefstuk</p>
+  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+<div class="productlijst2">
+
+<div id="productbox">
+  <img class="product1" src="producten/biefstuk.jpg" alt="Norway">
+  <div id="container2">
+    <p>Goede stevige, maar malse biefstuk</p>
+  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+<div class="productlijst2">
+
+<div id="productbox">
+  <img class="product1" src="producten/biefstuk.jpg" alt="Norway">
+  <div id="container2">
+    <p>Goede stevige, maar malse biefstuk</p>
+  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+  </div>
+</div>
+</div>
+
+</div>
+
+  </template>
+</dom-module>
+
+<script>
+
+class ProductenMain extends Polymer.Element{
+  static get is() { return 'producten-main';}
+};
+
+window.customElements.define(ProductenMain.is, ProductenMain);
+
+</script>
