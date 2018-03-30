@@ -1,4 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
 
 <dom-module id="producten-main">
   <template>
@@ -97,7 +98,7 @@
 <div id="productbox">
   <img class="product1" src="producten/biefstuk.jpg" alt="Norway">
   <div id="container2">
-    <p>Goede stevige, maar malse biefstuk</p>
+    <p>Goede stevige, maar malse [[test]]</p>
   <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
   </div>
 </div>
@@ -134,6 +135,14 @@
 
 class ProductenMain extends Polymer.Element{
   static get is() { return 'producten-main';}
+  static get properties() {
+    return{
+      test: {
+      type: String,
+      value: "saus"
+    }
+  };
+  }
 };
 
 window.customElements.define(ProductenMain.is, ProductenMain);
