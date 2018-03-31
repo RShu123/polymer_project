@@ -1,0 +1,130 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+<link rel="import" href="../../bower_components/app-storage/app-localstorage/app-localstorage-document.html">
+
+<dom-module id="overzicht-main">
+  <template is="dom-if" if="{{gerecht1 == "salade"}}">
+    <style>
+
+    img.overzichtplaatje{
+      height: 100px;
+      width: 100px;
+    }
+
+    #producten{
+    	background: rgba(255,153,0,0.1);
+    	border-style:solid;
+    	height: 200%;
+    	width: 89.15%;
+    	position: absolute;
+    	margin-left: 156px;
+    	margin-top: 9.5%;
+    	z-index: -1;
+    }
+
+    #tabel{
+      margin-top: 15px;
+      margin-left: 40%;
+      background-color: white;
+      position: absolute;
+    }
+
+      td, th{
+        border: 1px solid black;
+        text-align: center;
+      }
+
+</style>
+
+<style is="custom-style">
+  paper-button {
+    font-family: 'Roboto', 'Noto', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  paper-button.indigo {
+    background-color: var(--paper-indigo-500);
+    color: white;
+    --paper-button-raised-keyboard-focus: {
+      background-color: var(--paper-pink-a200) !important;
+      color: white !important;
+    };
+  }
+  paper-button.indigo:hover {
+    background-color: var(--paper-indigo-400);
+  }
+
+</style>
+
+<div id="producten">
+
+<div id ='tabel'>
+<table>
+  <tr>
+    <th>Foto product</th>
+    <th>Naam product</th>
+    <th>Prijs</th>
+  </tr>
+  <tr>
+    <td><img class="overzichtplaatje" src="[[foto]]"></img></td>
+    <td>[[gerecht1]]</td>
+    <td>[[prijssalade]]</td>
+  </tr>
+  <tr>
+    <td><img class="overzichtplaatje" src="[[foto2]]"></img></td>
+    <td>[[gerecht2]]</td>
+    <td>[[prijsbiefstuk]]</td>
+  </tr>
+</table>
+</div>
+
+
+<app-localstorage-document key="gerecht" data="{{gerecht1}}"></app-localstorage-document>
+<app-localstorage-document key="gerechten" data="{{gerecht2}}"></app-localstorage-document>
+<app-localstorage-document key="foto" data="{{foto}}"></app-localstorage-document>
+<app-localstorage-document key="foto2" data="{{foto2}}"></app-localstorage-document>
+<app-localstorage-document key="prijssalade" data="{{prijssalade}}"></app-localstorage-document>
+<app-localstorage-document key="prijsbiefstuk" data="{{prijsbiefstuk}}"></app-localstorage-document>
+
+</div>
+
+  </template>
+
+</dom-module>
+
+<script>
+
+/** @polymerElement */
+
+class OverzichtMain extends Polymer.Element{
+  static get is() { return 'overzicht-main';}
+  static get properties() {
+    return{
+      gerecht1:{
+      type: String
+      },
+      gerecht2:{
+      type: String
+    },
+      foto: {
+      type: String
+    },
+    foto2: {
+    type: String
+  },
+  prijssalade:{
+  type: String
+  },
+  prijsbiefstuk:{
+  type: String
+  },
+  };
+  }
+};
+
+window.customElements.define(OverzichtMain.is, OverzichtMain);
+
+</script>
