@@ -45,6 +45,7 @@
     	margin-top: 10px;
     }
 
+
     #container2 {
     	text-align: center;
     	height: 40px;
@@ -61,6 +62,11 @@
 </style>
 
 <style is="custom-style">
+
+  #container2 paper-button{
+    margin-top: 20px;
+  }
+
   paper-button {
     font-family: 'Roboto', 'Noto', sans-serif;
     font-weight: normal;
@@ -71,6 +77,7 @@
   paper-button.indigo {
     background-color: var(--paper-indigo-500);
     color: white;
+
     --paper-button-raised-keyboard-focus: {
       background-color: var(--paper-pink-a200) !important;
       color: white !important;
@@ -161,6 +168,7 @@
 <app-localstorage-document key="foto2" data="{{foto2}}"></app-localstorage-document>
 <app-localstorage-document key="prijssalade" data="{{prijssalade}}"></app-localstorage-document>
 <app-localstorage-document key="prijsbiefstuk" data="{{prijsbiefstuk}}"></app-localstorage-document>
+<app-localstorage-document key="gerechtenlijst" data="{{gerechtenLijst}}"></app-localstorage-document>
 
 </div>
 
@@ -199,21 +207,29 @@ class ProductenMain extends Polymer.Element{
   prijsbiefstuk:{
   type: String
   },
+
+
+    gerechtenLijst:{
+    type: Array,
+    value: [
+      {}
+    ]
+  },
+
+
   };
   }
   addgerecht1ClickHandler(){
     this.gerecht1 = ("Frisse salade");
-    console.log(this.gerecht1);
     this.foto = ("producten/salade.jpg");
     this.prijssalade = ("€8,00");
-    console.log(this.prijssalade);
+    this.push('gerechtenLijst', {foto : this.foto, gerecht : this.gerecht1, prijs : this.prijssalade});
   };
   addgerecht2ClickHandler(){
     this.gerecht2 = ("Malse biefstuk");
-    console.log(this.gerecht2);
     this.foto2 = ("producten/biefstuk.jpg");
     this.prijsbiefstuk = ("€17,50");
-    console.log(this.prijsbiefstuk);
+    this.push('gerechtenLijst', {foto : this.foto2, gerecht : this.gerecht2, prijs : this.prijsbiefstuk})
   };
 };
 
@@ -222,3 +238,5 @@ class ProductenMain extends Polymer.Element{
 window.customElements.define(ProductenMain.is, ProductenMain);
 
 </script>
+
+<script src="../../java.js"></script>
