@@ -2,6 +2,7 @@
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-styles/color.html">
 <link rel="import" href="../../bower_components/app-storage/app-localstorage/app-localstorage-document.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
 
 <dom-module id="overzicht-main">
   <template is="dom-if" if="{{gerecht1 == "salade"}}">
@@ -61,6 +62,7 @@
 
 <div id="producten">
 
+
 <div id ='tabel'>
 <table>
   <tr>
@@ -68,18 +70,22 @@
     <th>Naam product</th>
     <th>Prijs</th>
   </tr>
+  <template is="dom-repeat" items="{{gerechtenLijst}}">
   <tr>
-    <td><img class="overzichtplaatje" src="[[foto]]"></img></td>
-    <td>[[gerecht1]]</td>
-    <td>[[prijssalade]]</td>
+    <td><img class="overzichtplaatje" src="[[item.foto]]"></img></td>
+    <td>[[item.gerecht]]</td>
+    <td>[[item.prijs]]</td>
   </tr>
-  <tr>
-    <td><img class="overzichtplaatje" src="[[foto2]]"></img></td>
-    <td>[[gerecht2]]</td>
-    <td>[[prijsbiefstuk]]</td>
-  </tr>
+    </template>
 </table>
 </div>
+
+
+
+      <!--  <div><span><img class='overzichtplaatje' src='[[item.foto]]'></img></span></div>
+        <div><span>[[item.gerecht]]</span></div>
+        <div><span> [[item.prijs]]</span></div> -->
+
 
 
 <app-localstorage-document key="gerecht" data="{{gerecht1}}"></app-localstorage-document>
@@ -88,6 +94,7 @@
 <app-localstorage-document key="foto2" data="{{foto2}}"></app-localstorage-document>
 <app-localstorage-document key="prijssalade" data="{{prijssalade}}"></app-localstorage-document>
 <app-localstorage-document key="prijsbiefstuk" data="{{prijsbiefstuk}}"></app-localstorage-document>
+<app-localstorage-document key="gerechtenlijst" data="{{gerechtenLijst}}"></app-localstorage-document>
 
 </div>
 
@@ -121,7 +128,19 @@ class OverzichtMain extends Polymer.Element{
   prijsbiefstuk:{
   type: String
   },
-  };
+
+
+
+  gerechtenLijst:{
+  type: Array,
+  value: [
+    { foto : '/', gerecht : 'Water', prijs : '€0,00'}
+  ]
+},
+
+
+
+    };
   }
 };
 

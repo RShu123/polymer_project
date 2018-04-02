@@ -8,6 +8,7 @@
 <title> Eten bestellen </title>
 <meta charset="utf-8">
 <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+<link rel="import" href="/src/producten-header/producten-header.html">
 <link rel="import" href="/src/producten-main/producten-main.html">
 <!--<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">-->
 </head>
@@ -20,36 +21,19 @@
   <a>Rekening</a>
 </div>
 
-<div id="header2">
+<!--<div id="header2">
 <br>
 <br>
 <p class="restaurant"> Restaurant </p>
 <p class="datum" id="datum"></p>
 <div id="klik">
 <button class="knop2" type="button" onclick="window.location.href='rekening.html'">Rekening vragen</button>
-<button class="knop" type="button" disabled onclick="window.location.href='overzicht.html'">Bestelling verzenden</button>
+<button class="knop" id="bestelknop" type="button" onclick="window.location.href='overzicht.html'">Bestelling verzenden</button>
 </div>
-</div>
+</div>-->
+
+<producten-header></producten-header>
 
 <producten-main></producten-main>
 
 </body>
-
-<script>
-function startTime() {
-    var today = new Date();
-	var y = today.getFullYear();
-	var m = today.getMonth() + 1;
-	var d = today.getDate();
-    var h = today.getHours();
-    var min = today.getMinutes();
-    m = checkTime(m);
-    document.getElementById('datum').innerHTML = d + "/" + m + "/" + y + " | " + h + ":" + min ;
-    var t = setTimeout(startTime, 500);
-}
-
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-}
-</script>
