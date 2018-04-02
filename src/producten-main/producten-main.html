@@ -1,4 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-styles/color.html">
+<link rel="import" href="../../bower_components/app-storage/app-localstorage/app-localstorage-document.html">
 
 <dom-module id="producten-main">
   <template>
@@ -8,7 +11,7 @@
     	background: rgba(255,153,0,0.1);
     	border-style:solid;
     	height: 200%;
-    	width: 88.1%;
+    	width: 89.15%;
     	position: absolute;
     	margin-left: 156px;
     	margin-top: 9.5%;
@@ -57,15 +60,37 @@
 
 </style>
 
+<style is="custom-style">
+  paper-button {
+    font-family: 'Roboto', 'Noto', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  paper-button.indigo {
+    background-color: var(--paper-indigo-500);
+    color: white;
+    --paper-button-raised-keyboard-focus: {
+      background-color: var(--paper-pink-a200) !important;
+      color: white !important;
+    };
+  }
+  paper-button.indigo:hover {
+    background-color: var(--paper-indigo-400);
+  }
+</style>
+
 <div id="producten">
 
 <div class="productlijst">
 
 <div id="productbox">
-  <img class="product1" src="producten/salade.jpg" alt="Norway">
+  <img class="product1" src="producten/salade.jpg">
   <div class="container">
-    <p>Frisse salade</p>
-  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+    <p>[[salade]]</p>
+
+  <paper-button raised on-click="addgerecht1ClickHandler" class="indigo">Toevoegen</paper-button>
   </div>
 </div>
 </div>
@@ -73,10 +98,11 @@
 <div class="productlijst">
 
 <div id="productbox">
-  <img class="product1" src="producten/salade.jpg" alt="Norway">
+  <img class="product1" src="producten/salade.jpg">
   <div class="container">
-    <p>Frisse salade</p>
-  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+    <p>[[salade]]</p>
+
+  <paper-button class="indigo">Toevoegen</paper-button>
   </div>
 </div>
 </div>
@@ -84,10 +110,11 @@
 <div class="productlijst">
 
 <div id="productbox">
-  <img class="product1" src="producten/salade.jpg" alt="Norway">
+  <img class="product1" src="producten/salade.jpg">
   <div class="container">
-    <p>Frisse salade</p>
-  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+    <p>[[salade]]</p>
+
+  <paper-button class="indigo">Toevoegen</paper-button>
   </div>
 </div>
 </div>
@@ -95,10 +122,11 @@
 <div class="productlijst2">
 
 <div id="productbox">
-  <img class="product1" src="producten/biefstuk.jpg" alt="Norway">
+  <img class="product1" src="producten/biefstuk.jpg">
   <div id="container2">
-    <p>Goede stevige, maar malse biefstuk</p>
-  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+    <p>[[biefstuk]]</p>
+
+  <paper-button raised on-click="addgerecht2ClickHandler" class="indigo">Toevoegen</paper-button>
   </div>
 </div>
 </div>
@@ -106,10 +134,11 @@
 <div class="productlijst2">
 
 <div id="productbox">
-  <img class="product1" src="producten/biefstuk.jpg" alt="Norway">
+  <img class="product1" src="producten/biefstuk.jpg">
   <div id="container2">
-    <p>Goede stevige, maar malse biefstuk</p>
-  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+    <p>[[biefstuk]]</p>
+
+  <paper-button class="indigo">Toevoegen</paper-button>
   </div>
 </div>
 </div>
@@ -117,13 +146,21 @@
 <div class="productlijst2">
 
 <div id="productbox">
-  <img class="product1" src="producten/biefstuk.jpg" alt="Norway">
+  <img class="product1" src="producten/biefstuk.jpg">
   <div id="container2">
-    <p>Goede stevige, maar malse biefstuk</p>
-  <button type="button" onclick="window.location.href='overzicht.html'">Toevoegen</button>
+    <p>[[biefstuk]]</p>
+
+  <paper-button class="indigo">Toevoegen</paper-button>
   </div>
 </div>
 </div>
+
+<app-localstorage-document key="gerecht" data="{{gerecht1}}"></app-localstorage-document>
+<app-localstorage-document key="gerechten" data="{{gerecht2}}"></app-localstorage-document>
+<app-localstorage-document key="foto" data="{{foto}}"></app-localstorage-document>
+<app-localstorage-document key="foto2" data="{{foto2}}"></app-localstorage-document>
+<app-localstorage-document key="prijssalade" data="{{prijssalade}}"></app-localstorage-document>
+<app-localstorage-document key="prijsbiefstuk" data="{{prijsbiefstuk}}"></app-localstorage-document>
 
 </div>
 
@@ -134,7 +171,53 @@
 
 class ProductenMain extends Polymer.Element{
   static get is() { return 'producten-main';}
+  static get properties() {
+    return{
+  biefstuk: {
+  type: String,
+  value: "Malse biefstuk \n €17,50"
+  },
+  salade: {
+  type: String,
+  value: "Frisse salade \n €8,00"
+  },
+  foto: {
+  type: String
+  },
+  foto2: {
+  type: String
+  },
+  gerecht1:{
+  type:String
+  },
+  gerecht2:{
+  type:String
+  },
+  prijssalade:{
+  type: String
+  },
+  prijsbiefstuk:{
+  type: String
+  },
+  };
+  }
+  addgerecht1ClickHandler(){
+    this.gerecht1 = ("Frisse salade");
+    console.log(this.gerecht1);
+    this.foto = ("producten/salade.jpg");
+    this.prijssalade = ("€8,00");
+    console.log(this.prijssalade);
+  };
+  addgerecht2ClickHandler(){
+    this.gerecht2 = ("Malse biefstuk");
+    console.log(this.gerecht2);
+    this.foto2 = ("producten/biefstuk.jpg");
+    this.prijsbiefstuk = ("€17,50");
+    console.log(this.prijsbiefstuk);
+  };
 };
+
+
 
 window.customElements.define(ProductenMain.is, ProductenMain);
 
