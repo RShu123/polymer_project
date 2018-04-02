@@ -60,6 +60,9 @@ div.productlijst{
   float: left;
   width: 24.99999%;
 }
+div.productlijst button {
+	z-index: 2;
+}
 
 div.productlijst2{
 	margin-top: 3%;

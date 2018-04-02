@@ -162,12 +162,6 @@
 </div>
 </div>
 
-<app-localstorage-document key="gerecht" data="{{gerecht1}}"></app-localstorage-document>
-<app-localstorage-document key="gerechten" data="{{gerecht2}}"></app-localstorage-document>
-<app-localstorage-document key="foto" data="{{foto}}"></app-localstorage-document>
-<app-localstorage-document key="foto2" data="{{foto2}}"></app-localstorage-document>
-<app-localstorage-document key="prijssalade" data="{{prijssalade}}"></app-localstorage-document>
-<app-localstorage-document key="prijsbiefstuk" data="{{prijsbiefstuk}}"></app-localstorage-document>
 <app-localstorage-document key="gerechtenlijst" data="{{gerechtenLijst}}"></app-localstorage-document>
 
 </div>
@@ -207,6 +201,14 @@ class ProductenMain extends Polymer.Element{
   prijsbiefstuk:{
   type: String
   },
+  tafelnummer:{
+  type: String,
+  value : "12"
+  },
+  status: {
+  type: String,
+  value: "in behandeling"
+  },
 
 
     gerechtenLijst:{
@@ -223,13 +225,13 @@ class ProductenMain extends Polymer.Element{
     this.gerecht1 = ("Frisse salade");
     this.foto = ("producten/salade.jpg");
     this.prijssalade = ("€8,00");
-    this.push('gerechtenLijst', {foto : this.foto, gerecht : this.gerecht1, prijs : this.prijssalade});
+    this.push('gerechtenLijst', {foto : this.foto, gerecht : this.gerecht1, prijs : this.prijssalade, tafelnummer : this.tafelnummer, status : this.status});
   };
   addgerecht2ClickHandler(){
     this.gerecht2 = ("Malse biefstuk");
     this.foto2 = ("producten/biefstuk.jpg");
     this.prijsbiefstuk = ("€17,50");
-    this.push('gerechtenLijst', {foto : this.foto2, gerecht : this.gerecht2, prijs : this.prijsbiefstuk})
+    this.push('gerechtenLijst', {foto : this.foto2, gerecht : this.gerecht2, prijs : this.prijsbiefstuk, tafelnummer : this.tafelnummer, status : this.status})
   };
 };
 
