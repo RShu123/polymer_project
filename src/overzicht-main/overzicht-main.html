@@ -5,7 +5,7 @@
 <link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
 
 <dom-module id="overzicht-main">
-  <template is="dom-if" if="{{gerecht1 == "salade"}}">
+  <template>
     <style>
 
     img.overzichtplaatje{
@@ -26,7 +26,7 @@
 
     #tabel{
       margin-top: 15px;
-      margin-left: 40%;
+      margin-left: 35%;
       background-color: white;
       position: absolute;
     }
@@ -69,12 +69,16 @@
     <th>Foto product</th>
     <th>Naam product</th>
     <th>Prijs</th>
+    <th>Tafelnummer</th>
+    <th>Status</th>
   </tr>
   <template is="dom-repeat" items="{{gerechtenLijst}}">
   <tr>
     <td><img class="overzichtplaatje" src="[[item.foto]]"></img></td>
     <td>[[item.gerecht]]</td>
     <td>[[item.prijs]]</td>
+    <td>[[item.tafelnummer]]</td>
+    <td>[[item.status]]</td>
   </tr>
     </template>
 </table>
@@ -88,12 +92,6 @@
 
 
 
-<app-localstorage-document key="gerecht" data="{{gerecht1}}"></app-localstorage-document>
-<app-localstorage-document key="gerechten" data="{{gerecht2}}"></app-localstorage-document>
-<app-localstorage-document key="foto" data="{{foto}}"></app-localstorage-document>
-<app-localstorage-document key="foto2" data="{{foto2}}"></app-localstorage-document>
-<app-localstorage-document key="prijssalade" data="{{prijssalade}}"></app-localstorage-document>
-<app-localstorage-document key="prijsbiefstuk" data="{{prijsbiefstuk}}"></app-localstorage-document>
 <app-localstorage-document key="gerechtenlijst" data="{{gerechtenLijst}}"></app-localstorage-document>
 
 </div>
@@ -137,7 +135,7 @@ class OverzichtMain extends Polymer.Element{
   gerechtenLijst:{
   type: Array,
   value: [
-    { foto : '/', gerecht : 'Water', prijs : '€0,00'}
+    { foto : 'producten/kanwater.jpg', gerecht : 'Water', prijs : '€0,00', tafelnummer : '12', status : 'geserveerd'}
   ]
 },
 
