@@ -10,7 +10,7 @@
     #producten{
     	background: rgba(255,153,0,0.1);
     	border-style:solid;
-    	height: 200%;
+    	height: 100%;
     	width: 89.15%;
     	position: absolute;
     	margin-left: 156px;
@@ -105,11 +105,11 @@
 <div class="productlijst">
 
 <div id="productbox">
-  <img class="product1" src="producten/salade.jpg">
+  <img class="product1" src="producten/pasta.jpg">
   <div class="container">
-    <p>[[salade]]</p>
+    <p>[[pasta]]</p>
 
-  <paper-button class="indigo">Toevoegen</paper-button>
+  <paper-button raised on-click="addgerecht3ClickHandler" class="indigo">Toevoegen</paper-button>
   </div>
 </div>
 </div>
@@ -117,11 +117,11 @@
 <div class="productlijst">
 
 <div id="productbox">
-  <img class="product1" src="producten/salade.jpg">
+  <img class="product1" src="producten/pitabroodjeskip.jpg">
   <div class="container">
-    <p>[[salade]]</p>
+    <p>[[pitabroodjeskip]]</p>
 
-  <paper-button class="indigo">Toevoegen</paper-button>
+  <paper-button raised on-click="addgerecht4ClickHandler" class="indigo">Toevoegen</paper-button>
   </div>
 </div>
 </div>
@@ -141,11 +141,11 @@
 <div class="productlijst2">
 
 <div id="productbox">
-  <img class="product1" src="producten/biefstuk.jpg">
+  <img class="product1" src="producten/zalm.jpg">
   <div id="container2">
-    <p>[[biefstuk]]</p>
+    <p>[[zalm]]</p>
 
-  <paper-button class="indigo">Toevoegen</paper-button>
+  <paper-button raised on-click="addgerecht5ClickHandler" class="indigo">Toevoegen</paper-button>
   </div>
 </div>
 </div>
@@ -153,11 +153,11 @@
 <div class="productlijst2">
 
 <div id="productbox">
-  <img class="product1" src="producten/biefstuk.jpg">
+  <img class="product1" src="producten/domperignon.jpg">
   <div id="container2">
-    <p>[[biefstuk]]</p>
+    <p>[[domperignon]]</p>
 
-  <paper-button class="indigo">Toevoegen</paper-button>
+  <paper-button raised on-click="addgerecht6ClickHandler" class="indigo">Toevoegen</paper-button>
   </div>
 </div>
 </div>
@@ -183,6 +183,22 @@ class ProductenMain extends Polymer.Element{
   type: String,
   value: "Frisse salade \n €8,00"
   },
+  pasta: {
+  type: String,
+  value: "Overheerlijke pasta \n €12,80"
+  },
+  pitabroodjeskip: {
+  type: String,
+  value: "Pitabroodjes met kip \n €13,25"
+  },
+  zalm: {
+  type: String,
+  value: "Zeer smaakvolle zalm \n €19,00"
+  },
+  domperignon: {
+  type: String,
+  value: "De welbekende champagne, uit het jaar 2009 \n €499,00"
+  },
   tafelnummer:{
   type: String,
   value : "12"
@@ -206,13 +222,13 @@ class ProductenMain extends Polymer.Element{
     this.push('gerechtenLijst', {foto : 'producten/biefstuk.jpg', gerecht : 'Malse biefstuk', prijs : '€17,50', tafelnummer : this.tafelnummer, status : this.status});
   };
   addgerecht3ClickHandler(){
-    this.push('gerechtenLijst', {foto : 'producten/salade.jpg', gerecht : 'Frisse salade', prijs : '€8,00', tafelnummer : this.tafelnummer, status : this.status});
+    this.push('gerechtenLijst', {foto : 'producten/pasta.jpg', gerecht : 'Overheerlijke pasta', prijs : '€12,80', tafelnummer : this.tafelnummer, status : this.status});
   };
   addgerecht4ClickHandler(){
-    this.push('gerechtenLijst', {foto : 'producten/salade.jpg', gerecht : 'Frisse salade', prijs : '€8,00', tafelnummer : this.tafelnummer, status : this.status});
+    this.push('gerechtenLijst', {foto : 'producten/pitabroodjeskip.jpg', gerecht : 'Pitabroodjes met kip', prijs : '€13,25', tafelnummer : this.tafelnummer, status : this.status});
   };
   addgerecht5ClickHandler(){
-    this.push('gerechtenLijst', {foto : 'producten/salade.jpg', gerecht : 'Frisse salade', prijs : '€8,00', tafelnummer : this.tafelnummer, status : this.status});
+    this.push('gerechtenLijst', {foto : 'producten/zalm.jpg', gerecht : 'Zeer smaakvolle zalm', prijs : '€19,00', tafelnummer : this.tafelnummer, status : this.status});
   };
   addgerecht6ClickHandler(){
     this.push('gerechtenLijst', {foto : 'producten/salade.jpg', gerecht : 'Frisse salade', prijs : '€8,00', tafelnummer : this.tafelnummer, status : this.status});
