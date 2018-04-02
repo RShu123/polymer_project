@@ -119,7 +119,7 @@
   </template>
 </dom-module>
 
-<script>
+<!--<script>
 function startTime() {
     var today = new Date();
 	  var y = today.getFullYear();
@@ -128,7 +128,7 @@ function startTime() {
     var h = today.getHours();
     var min = today.getMinutes();
     min = checkTime(min);
-    this.shadowRoot.getElementById('datum').innerHTML = d + "/" + m + "/" + y + " | " + h + ":" + min ;
+    document.getElementById('datum').innerHTML = d + "/" + m + "/" + y + " | " + h + ":" + min ;
     var t = setTimeout(startTime, 500);
 }
 
@@ -136,7 +136,7 @@ function checkTime(min) {
     if (min < 10) {min = "0" + min};  // add zero in front of numbers < 10
     return min;
 }
-</script>
+</script>-->
 
 <script>
   class ProductenHeader extends Polymer.Element {
