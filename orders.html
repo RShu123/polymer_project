@@ -4,23 +4,19 @@
   <link rel="stylesheet" href="style.css">
   <meta charset="utf-8">
   <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-  <link rel="import" href="/src/producten-header/producten-header.html">
+  <link rel="import" href="/src/orders-header/orders-header.html">
 </head>
 
 <body onload="startTime()">
+
+
 
 <div class="sidenav">
   <a class="active">Orders</a>
   <a href="recepten.html">Recepten</a>
 </div>
 
-<div id="header2">
-<br>
-<br>
-<p class="restaurant"> Restaurant </p>
-<p class="datum" id="datum"></p>
-<div>
-  <button id="myBtn">Open Modal</button>
+<orders-header> </orders-header>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -31,16 +27,13 @@
     <p>Some text in the Modal..</p>
   </div>
 </div>
-</div>
 
 <div id="producten">
 
 <div class="productlijst">
-
-  </div>
+<button id="myBtn">Klik hier voor een zieke pop-up.</button>
 </div>
 </div>
-
   <script>
 
 // Get the modal
