@@ -10,7 +10,7 @@
     #producten{
     	background: rgba(255,153,0,0.1);
     	border-style:solid;
-    	height: 100%;
+    	height: 150%;
     	width: 89.15%;
     	position: absolute;
     	margin-left: 156px;
@@ -23,12 +23,12 @@
     	margin-left: 14.68%;
     	width: 200px;
     	background-color: white;
-    	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* schaduw van de box */
     }
 
     div.productlijst{
-    	padding: 0 6px;
-        float: left;
+    	padding: 0 6px; /*witruimte tussen de rand en de inhoud van de div */
+        float: left; /* het laten 'drijven' van de div, de locatie is dus variabel */
         width: 24.99999%;
     }
 
@@ -63,7 +63,7 @@
 
 <style is="custom-style">
 
-  #container2 paper-button{
+  #container2 paper-button{ /* div 'container' waarin zich een paper-button bevind stijlen  */
     margin-top: 20px;
   }
 
@@ -92,12 +92,12 @@
 
 <div class="productlijst">
 
-<div id="productbox">
-  <img class="product1" src="producten/salade.jpg">
-  <div class="container">
-    <p>[[salade]]</p>
+<div id="productbox"> <!--aanroepen productbox -->
+  <img class="product1" src="producten/salade.jpg"> <!-- plaatje met eerste gerecht -->
+  <div class="container"> <!-- het openen van een 'container' die de tekst en de knop bevat -->
+    <p>[[salade]]</p> <!--dit zorgt ervoor dat de container de tekst bevat van het juiste product -->
 
-  <paper-button raised on-click="addgerecht1ClickHandler" class="indigo">Toevoegen</paper-button>
+  <paper-button raised on-click="addgerecht1ClickHandler" class="indigo">Toevoegen</paper-button> <!-- paper-button die de functie aanroept om een gerecht om een gerecht aan de gerechtenLijst toe te voegen -->
   </div>
 </div>
 </div>
@@ -175,9 +175,9 @@ class ProductenMain extends Polymer.Element{
   static get is() { return 'producten-main';}
   static get properties() {
     return{
-  biefstuk: {
-  type: String,
-  value: "Malse biefstuk \n €17,50"
+  biefstuk: { //aanmaken nieuw attribuut van soort gerecht
+  type: String, // aangeven type
+  value: "Malse biefstuk \n €17,50" //aangeven tekst die dit attribuut meekrijgt, in dit geval de naam en de prijs
   },
   salade: {
   type: String,
@@ -199,13 +199,13 @@ class ProductenMain extends Polymer.Element{
   type: String,
   value: "De welbekende champagne, uit het jaar 2009 \n €499,00"
   },
-  tafelnummer:{
-  type: String,
-  value : "12"
+  tafelnummer:{// aanmaken attribuut tafelnummer
+  type: String, // type String
+  value : "12" // krijgt voor elke gebruiker een andere waarde mee, voor deze gebruiker is als voorbeeld uitgegaan van tafel 12
   },
-  status: {
-  type: String,
-  value: "in behandeling"
+  status: { // aanmaken attribuut status
+  type: String, //type String
+  value: "in behandeling" // omdat de bestelling uiteindelijk wordt verzonden naar de keuken waar het gerecht bereidt wordt, krijg dit de waarde 'in behandeling' mee
   },
   gerechtenLijst:{
   type: Array,
@@ -215,8 +215,8 @@ class ProductenMain extends Polymer.Element{
 
   };
   }
-  addgerecht1ClickHandler(){
-    this.push('gerechtenLijst', {foto : 'producten/salade.jpg', gerecht : 'Frisse salade', prijs : '€8,00', tafelnummer : this.tafelnummer, status : this.status});
+  addgerecht1ClickHandler(){ // aanmaken functie toevoegen gerecht aan lijst
+    this.push('gerechtenLijst', {foto : 'producten/salade.jpg', gerecht : 'Frisse salade', prijs : '€8,00', tafelnummer : this.tafelnummer, status : this.status}); //toevoegen 'object' 'gerecht' aan de lijst met meerdere parameters zoals prijs en foto
   };
   addgerecht2ClickHandler(){
     this.push('gerechtenLijst', {foto : 'producten/biefstuk.jpg', gerecht : 'Malse biefstuk', prijs : '€17,50', tafelnummer : this.tafelnummer, status : this.status});
@@ -241,4 +241,6 @@ window.customElements.define(ProductenMain.is, ProductenMain);
 
 </script>
 
-<script src="../../java.js"></script>
+<!-- onderstaand het aanroepen van de actuele datumfunctie, maar deze kreeg zoals eerder vermeld niet werkend-->
+
+<!--<script src="../../java.js"></script> -->

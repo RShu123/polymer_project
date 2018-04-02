@@ -1,42 +1,35 @@
-<!doctype html>
+<!doctype html> <!-- HTML5 aanduiding -->
 
 <html>
 
 <head>
-<!--<script src="allscript.js"></script>-->
+
 <link rel="stylesheet" href="style.css">
-<title> Eten bestellen </title>
+<title>Overzicht</title>
 <meta charset="utf-8">
-<script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-<link rel="import" href="/src/overzicht-header/overzicht-header.html">
-<link rel="import" href="/src/overzicht-main/overzicht-main.html">
-<!--<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">-->
+<script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script> <!-- importeren van de webcomponenten lader voor componenten zoals paper-buttons en dergelijke -->
+<link rel="import" href="/src/overzicht-header/overzicht-header.html"> <!-- importeren van het polymer-element 'overzicht-header'-->
+<link rel="import" href="/src/overzicht-main/overzicht-main.html"> <!-- importeren van het polymer-element 'overzicht-main' -->
+
 </head>
 
 <body>
 
-<div class="sidenav">
+<div class="sidenav"> <!-- creeren zij-menu -->
   <a>Menu</a>
-  <a class="active">Overzicht</a>
+  <a class="active">Overzicht</a> <!-- onderdelen van het menu waarvan deze actief is en dus een witte achtergond heeft -->
   <a>Rekening</a>
 </div>
 
-<!--<div id="header2">
-<br>
-<br>
-<p class="restaurant"> Restaurant </p>
-<p class="datum" id="datum"></p>
-<div id="klik">
-<button class="knop2" type="button" onclick="window.location.href='rekening.html'">Rekening vragen</button>
-<button class="knop" type="button" disabled onclick="window.location.href='overzicht.html'">Bestelling verzenden</button>
-</div>
-</div>-->
+<overzicht-header></overzicht-header> <!-- inzetten polymer-element 'overzicht-header' -->
 
-<overzicht-header></overzicht-header>
-
-<overzicht-main></overzicht-main>
+<overzicht-main></overzicht-main> <!-- inzetten polymer-element 'overzicht-main' -->
 
 </body>
+
+
+<!-- hieronder de scriptfunctie van de datum, maar dit krijg ik na vele uren niet werkend -->
+
 
 <!--<script>
 function startTime() {
@@ -56,3 +49,5 @@ function checkTime(i) {
     return i;
 }
 </script>-->
+
+</html>

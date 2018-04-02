@@ -1,17 +1,18 @@
-<!doctype html>
+<!doctype html> <!-- HTML5 aanduiding -->
 
 <html>
 
 <head>
 
-<!--<script src="allscript.js"></script>-->
-<link rel="stylesheet" href="style.css">
-<meta charset="utf-8">
-<!--<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">-->
+
+<link rel="stylesheet" href="style.css"> <!-- link naar de stylesheet-->
+<title>Welkom</title>
+<meta charset="utf-8"> <!-- karakterset UTF-8 voor de juiste lettercodering -->
+
 
 </head>
 
-<body onload="startTime()">
+<body onload="startTime()"> <!-- starten van de actuele-datum-functie -->
 
 <div id="header">
 <p class="restaurant"> Restaurant </p>
@@ -21,25 +22,20 @@
 <div id="main">
 
 <a class="welkomsttekst">
-Wederkerigheid werkt volgens een bepaald puntensysteem. 
-Als ik jou zomaar help, dan geef jij mij een aantal sociale punten.
-Voor je gevoel heb jij dan een schuld bij mij. 
-Dit gevoel van schuld wil je vereffenen door ook iets voor mij te doen.
-Het inspelen op wederkerigheid is precies de reden dat wij in een restaurant pepermuntjes krijgen.
-Uit onderzoek is gebleken dat het weggeven van een pepermuntje (bij de rekening) de fooi met 3% verhoogt.
-Geeft men je twee pepermuntjes dan stijgt de fooi met 14%.
-Apart, vind je niet?
-Maar het wordt nog erger.
-Als de ober je namelijk eerst 1 pepermuntje geeft en later terugkomt met 
-“omdat jullie zo aardig zijn, hier een extra pepermuntje” dan verhoogt de fooi zich met 23%
-Wat je allemaal niet kunt verdienen met een paar pepermuntjes ?
+Dit restaurant hecht veel waarde aan topgerechten.
+Echter, naar ons idee is een culinair belevenis pas echt compleet, met een gezellige en comfortabele sfeer.
+Daarom heeft Shizen gekozen voor een sfeervol en modern interieur.
+Onderdeel van dit moderne interieur is een luxe bar, comfortabele zitplaatsen, gratis wi-fi, maar ook een tablet waarmee bestellingen in een rap tempo richting de keuken gaan.
+Naast een gevarieerde menukaart zijn er binnen dit restaurant diverse ruimtes gecreëerd waar u terecht kunt voor zowel intieme als feestelijke gelegenheden.
+Daarnaast hebben zakelijke klanten toegang tot vergaderruimtes, voorzien van alle moderne faciliteiten.
+Door de ruime parkeergelegenheid en de ligging is dit restaurant een ideaal meetingpoint.
 </a>
 
 </div>
 
 <div id ="button">
 
-<button type="button" onclick="window.location.href='producten.html'">Eten bestellen</button>
+<button type="button" onclick="window.location.href='producten.html'">Eten bestellen</button> <!-- aanmaken van de button om eten te bestellen -->
 
 </div>
 
@@ -49,20 +45,22 @@ Wat je allemaal niet kunt verdienen met een paar pepermuntjes ?
 </body>
 
 <script>
-function startTime() {
-    var today = new Date();
-	var y = today.getFullYear();
-	var m = today.getMonth() + 1;
-	var d = today.getDate();
-    var h = today.getHours();
-    var min = today.getMinutes();
-    m = checkTime(m);
-    document.getElementById('datum').innerHTML = d + "/" + m + "/" + y + " | " + h + ":" + min ;
-    var t = setTimeout(startTime, 500);
+function startTime() {  //openen nieuwe functie
+    var today = new Date(); // variabele today is een nieuw object
+	var y = today.getFullYear(); // variabele y = het jaartal
+	var m = today.getMonth() + 1; // variabele m = de maand + 1 voor de juiste telling
+	var d = today.getDate(); // variabele d = de dag van vandaag
+    var h = today.getHours(); // variabele h = de uuraanduiding
+    var min = today.getMinutes(); // de variabele min = de minuten
+    min = checkTime(min); //min roept de functie checkTime aan
+    document.getElementById('datum').innerHTML = d + "/" + m + "/" + y + " | " + h + ":" + min ; // Dit verplaatst alle variabelen in een nette zin naar de locatie van id 'datum' in dit bestand
+    var t = setTimeout(startTime, 500); // korte timeout van 500ms
 }
 
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
+function checkTime(i) { //openen nieuwe functie
+    if (i < 10) {i = "0" + i};  // toevoegen van een 0 voor de minuten onder de 10.
+    return i; // het returnen van dit getal
 }
 </script>
+
+</html>

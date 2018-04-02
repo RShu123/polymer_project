@@ -1,0 +1,7 @@
+Beste meneer Jansen,
+
+Alle code van de use case UC01 is gedocumenteerd, echter heb ik niet op elke pagina waar dezelfde waarden zich bevinden,
+opnieuw alles uitgetypt. Verspreid door de documenten heen staat alle uitleg. Dit is misschien wat onhandig, maar het is
+erg inefficient om alles meer dan 2x te beschrijven.
+
+Met vriendelijke groet.

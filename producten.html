@@ -3,37 +3,26 @@
 <html>
 
 <head>
-<!--<script src="allscript.js"></script>-->
 <link rel="stylesheet" href="style.css">
 <title> Eten bestellen </title>
 <meta charset="utf-8">
 <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-<link rel="import" href="/src/producten-header/producten-header.html">
-<link rel="import" href="/src/producten-main/producten-main.html">
-<!--<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">-->
+<link rel="import" href="/src/producten-header/producten-header.html"> <!-- importeren polymer-element 'producten-header'-->
+<link rel="import" href="/src/producten-main/producten-main.html"> <!-- importeren polymer-element 'producten-main'-->
 </head>
 
 <body>
 
 <div class="sidenav">
-  <a class="active">Menu</a>
+  <a class="active">Menu</a> <!-- onderdelen van het menu waarvan deze actief is en dus een witte achtergond heeft -->
   <a>Overzicht</a>
   <a>Rekening</a>
 </div>
 
-<!--<div id="header2">
-<br>
-<br>
-<p class="restaurant"> Restaurant </p>
-<p class="datum" id="datum"></p>
-<div id="klik">
-<button class="knop2" type="button" onclick="window.location.href='rekening.html'">Rekening vragen</button>
-<button class="knop" id="bestelknop" type="button" onclick="window.location.href='overzicht.html'">Bestelling verzenden</button>
-</div>
-</div>-->
+<producten-header></producten-header> <!-- aanoepen polymer-element 'producten-header' -->
 
-<producten-header></producten-header>
-
-<producten-main></producten-main>
+<producten-main></producten-main> <!-- aanroepen polymer-element 'producten-main' -->
 
 </body>
+
+</html>

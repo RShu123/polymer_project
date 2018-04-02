@@ -1,7 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-styles/color.html">
-<link rel="import" href="../../bower_components/app-storage/app-localstorage/app-localstorage-document.html">
 
 <dom-module id="producten-header">
   <template>
@@ -14,15 +13,6 @@
 
     button.knop{
     	margin-left: 25%;
-    }
-
-    #header{
-    	border-style: solid;
-    	border-width: 3px;
-    	border-radius: 2px;
-    	background: rgba(0,0,0,0.3);
-    	width: 99%;
-    	height: 20%;
     }
 
     #header2{
@@ -102,15 +92,13 @@
     <br>
     <p class="restaurant"> Restaurant </p>
     <p class="datum" id="datum">[datum - tijd]</p>
-    <div id="klik">
-    <!--<button class="knop2" type="button" onclick="window.location.href='rekening.html'">Rekening vragen</button>-->
-    <a href="rekening.html">
-    <paper-button raised class="indigo">Rekening vragen</paper-button>
+    <div id="klik"> <!-- aanroepen klik div -->
+    <a href="rekening.html"> <!-- aanmaken link waardoor button naar een andere pagina kan verwijzen -->
+    <paper-button raised class="indigo">Rekening vragen</paper-button> <!-- aanroepen paper-button voor 'rekening vragen' -->
     </a>
     <a href="overzicht.html">
-    <paper-button raised class="indigo2">Bestelling verzenden</paper-button>
+    <paper-button raised class="indigo2">Bestelling verzenden</paper-button> <!-- aanroepen paper-button voor 'rekening vragen' -->
     </a>
-    <!--<button class="knop" id="bestelknop" type="button" onclick="window.location.href='overzicht.html'">Bestelling verzenden</button>-->
     </div>
     </div>
 

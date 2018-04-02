@@ -1,66 +1,56 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-styles/color.html">
-<link rel="import" href="../../bower_components/app-storage/app-localstorage/app-localstorage-document.html">
 
 <dom-module id="overzicht-header">
   <template>
     <style>
 
-    #button{
+    #button{ /* div id 'button' stijlen */
     	margin-top: 5px;
     	text-align:center;
     }
 
-    button.knop{
+    button.knop{ /* button met klasse knop stijlen */
     	margin-left: 25%;
     }
 
-    #header{
+    #header2{ /* div id 'header2' stijlen */
     	border-style: solid;
-    	border-width: 3px;
-    	border-radius: 2px;
-    	background: rgba(0,0,0,0.3);
-    	width: 99%;
-    	height: 20%;
-    }
-
-    #header2{
-    	border-style: solid;
-    	border-width: 3px;
-    	border-radius: 2px;
+    	border-width: 3px; /* border dikte van 3 pixels */
+    	border-radius: 2px; /*border met ronde hoeken */
     	background: rgba(0,0,0,0.3);
     	width: 99.5%;
     	margin-left: -8px;
     	margin-top: -8px;
     	/*height: 22.5%;*/
-    	position: fixed;
-      overflow: hidden;
+    	position: fixed; /* gefixeerde positie zodat de div meegaat over de pagina terwijl je scrollt */
+      overflow: hidden; /* child-divs kunnen hierdoor niet buiten de parten-div schuiven */
     }
 
-    #klik{
+    #klik{ /* div id 'klik' stijlen */
     	margin-left: 30%;
     }
 
-    klik.button{
-    	display: inline;
+    klik.button{ /* div met klasse button stijlen */
+    	display: inline; /* de knoppen worden op dezelfde regel laten zien */
     }
 
-    p.restaurant{
-    	margin-left: 1%;
-    	color: #ffffff;
-    	font-style: italic;
-    }
-
-    p.datum{
+    p.datum{ /* 'p' (tekst) met klasse datum stijlen */
     	margin-right: 1%;
     	text-align: right;
     	color: #ffffff;
     }
 
-    p.tussentekst{
+    p.tussentekst{ /* 'p' (tekst) met klasse tussentekststijlen */
       text-align: center;
       color: #ffffff;
+    }
+
+    p.restaurant{ /* 'p' (tekst) met klasse restaurant stijlen */
+    	margin-left: 1%;
+    	color: #ffffff;
+    	font-style: italic; /* aangepaste stijl van het lettertype in dit geval cursief */
     }
 
     </style>
@@ -84,7 +74,7 @@
         };
       }
 
-      paper-button.indigo2 {
+      paper-button.indigo2 { /* deze klasse is hetzelfde als de andere alleen is de margin aangepast */
         background-color: var(--paper-indigo-500);
         color: white;
         margin-left: 25%;
@@ -105,19 +95,17 @@
     </style>
 
     <div id="header2">
-    <br>
     <p class="restaurant"> Restaurant </p>
     <p class="datum" id="datum">[datum - tijd]</p>
     <p class="tussentekst"><u>Bevestig uw bestelling</u></p>
     <div id="klik">
-    <!--<button class="knop2" type="button" onclick="window.location.href='rekening.html'">Rekening vragen</button>-->
     <a href="producten.html">
     <paper-button raised class="indigo">Bestelling incorrect</paper-button>
     </a>
     <a href="producten.html">
-    <paper-button raised on-click="bestellingConfirmed" class="indigo2">Bestelling correct</paper-button>
+    <paper-button raised on-click="bestellingConfirmed" class="indigo2">Bestelling correct</paper-button> <!-- paper-button met klasse indigo2 die bij het klikken functie 'bestellingConfirmed aanroept' -->
     </a>
-    <!--<button class="knop" id="bestelknop" type="button" onclick="window.location.href='overzicht.html'">Bestelling verzenden</button>-->
+
     </div>
 
     <app-localstorage-document key="gerechtenlijst" data="{{gerechtenLijst}}"></app-localstorage-document>
@@ -157,9 +145,9 @@ function checkTime(min) {
       }
     };
 
-  bestellingConfirmed(){
-    alert("Bestelling is verzonden");
-    this.splice("gerechtenLijst", 1, this.gerechtenLijst.length);
+  bestellingConfirmed(){ // maken functie 'bestellingConfirmed'
+    alert("Bestelling is verzonden"); //pop-up met bestelling verzonden
+    this.splice("gerechtenLijst", 1, this.gerechtenLijst.length); //het leegmaken van het bestellingsoverzicht zodat er niet een ophoping van producten ontstaat tussen meerdere bestellingen door
   };
 
 };
