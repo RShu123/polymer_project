@@ -183,24 +183,6 @@ class ProductenMain extends Polymer.Element{
   type: String,
   value: "Frisse salade \n €8,00"
   },
-  foto: {
-  type: String
-  },
-  foto2: {
-  type: String
-  },
-  gerecht1:{
-  type:String
-  },
-  gerecht2:{
-  type:String
-  },
-  prijssalade:{
-  type: String
-  },
-  prijsbiefstuk:{
-  type: String
-  },
   tafelnummer:{
   type: String,
   value : "12"
@@ -209,29 +191,31 @@ class ProductenMain extends Polymer.Element{
   type: String,
   value: "in behandeling"
   },
-
-
-    gerechtenLijst:{
-    type: Array,
-    value: [
-      {}
-    ]
+  gerechtenLijst:{
+  type: Array,
+  value: [{}]
   },
 
 
   };
   }
   addgerecht1ClickHandler(){
-    this.gerecht1 = ("Frisse salade");
-    this.foto = ("producten/salade.jpg");
-    this.prijssalade = ("€8,00");
-    this.push('gerechtenLijst', {foto : this.foto, gerecht : this.gerecht1, prijs : this.prijssalade, tafelnummer : this.tafelnummer, status : this.status});
+    this.push('gerechtenLijst', {foto : 'producten/salade.jpg', gerecht : 'Frisse salade', prijs : '€8,00', tafelnummer : this.tafelnummer, status : this.status});
   };
   addgerecht2ClickHandler(){
-    this.gerecht2 = ("Malse biefstuk");
-    this.foto2 = ("producten/biefstuk.jpg");
-    this.prijsbiefstuk = ("€17,50");
-    this.push('gerechtenLijst', {foto : this.foto2, gerecht : this.gerecht2, prijs : this.prijsbiefstuk, tafelnummer : this.tafelnummer, status : this.status})
+    this.push('gerechtenLijst', {foto : 'producten/biefstuk.jpg', gerecht : 'Malse biefstuk', prijs : '€17,50', tafelnummer : this.tafelnummer, status : this.status});
+  };
+  addgerecht3ClickHandler(){
+    this.push('gerechtenLijst', {foto : 'producten/salade.jpg', gerecht : 'Frisse salade', prijs : '€8,00', tafelnummer : this.tafelnummer, status : this.status});
+  };
+  addgerecht4ClickHandler(){
+    this.push('gerechtenLijst', {foto : 'producten/salade.jpg', gerecht : 'Frisse salade', prijs : '€8,00', tafelnummer : this.tafelnummer, status : this.status});
+  };
+  addgerecht5ClickHandler(){
+    this.push('gerechtenLijst', {foto : 'producten/salade.jpg', gerecht : 'Frisse salade', prijs : '€8,00', tafelnummer : this.tafelnummer, status : this.status});
+  };
+  addgerecht6ClickHandler(){
+    this.push('gerechtenLijst', {foto : 'producten/salade.jpg', gerecht : 'Frisse salade', prijs : '€8,00', tafelnummer : this.tafelnummer, status : this.status});
   };
 };
 
